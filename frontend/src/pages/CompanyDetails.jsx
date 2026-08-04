@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Typography, Box, Tabs, Tab, CircularProgress, Alert, Paper, Grid, Divider } from '@mui/material';
+import { Container, Typography, Box, Tabs, Tab, CircularProgress, Alert, Paper, Divider } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import { fetchCompanyById } from '../services/api';
 
 function TabPanel({ children, value, index }) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Typography, Box, CircularProgress, Alert, Paper, Grid, Button, Divider } from '@mui/material';
+import { Container, Typography, Box, CircularProgress, Alert, Paper, Button, Divider } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import { fetchContact, fetchCompanies } from '../services/api';
 
 export default function ContactDetails() {

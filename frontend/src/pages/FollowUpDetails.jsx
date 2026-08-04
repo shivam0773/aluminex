@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Typography, Box, CircularProgress, Alert, Paper, Grid, Button, Chip } from '@mui/material';
+import { Container, Typography, Box, CircularProgress, Alert, Paper, Button, Chip } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import { fetchFollowUp } from '../services/api';
 
 export default function FollowUpDetails() {

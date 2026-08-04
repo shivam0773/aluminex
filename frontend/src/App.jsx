@@ -6,6 +6,7 @@ import CompanyDetails from "./pages/CompanyDetails";
 import Contacts from "./pages/Contacts";
 import ContactDetails from "./pages/ContactDetails";
 import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
 import FollowUps from "./pages/FollowUps";
 import FollowUpDetails from "./pages/FollowUpDetails";
 import Communications from "./pages/Communications";
@@ -26,14 +27,14 @@ function App() {
       <Route path="/contacts" element={<Contacts />} />
       {/* Contact Details */}
       <Route path="/contacts/:id" element={<ContactDetails />} />
-      
+
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:id" element={<ProductDetails />} />
       <Route path="/followups" element={<FollowUps />} />
       <Route path="/followups/:id" element={<FollowUpDetails />} />
       <Route path="/communications" element={<Communications />} />
       <Route path="/communications/:id" element={<CommunicationDetails />} />
-      </Routes>
-      );
-      }
-
+    </Routes>
+  );
+}
       export default App;

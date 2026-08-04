@@ -203,3 +203,49 @@ export async function deleteCommunication(id) {
   return handleResponse(response);
 }
 
+// --- Products API ---
+
+export async function fetchProducts(params) {
+  const queryParams = new URLSearchParams();
+  queryParams.append('page', params.page.toString());
+  queryParams.append('size', params.size.toString());
+
+  if (params.search) queryParams.append('search', params.search);
+  if (params.category) queryParams.append('category', params.category);
+  if (params.is_active !== undefined) queryParams.append('is_active', params.is_active.toString());
+
+  const response = await fetch(`${API_BASE_URL}/products/?${queryParams.toString()}`);
+  return handleResponse(response);
+}
+
+export async function fetchProduct(id) {
+  const response = await fetch(`${API_BASE_URL}/products/${id}`);
+  return handleResponse(response);
+}
+
+export async function createProduct(productData) {
+  const response = await fetch(`${API_BASE_URL}/products/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(productData),
+  });
+  return handleResponse(response);
+}
+
+export async function updateProduct(id, productData) {
+  const response = await fetch(`${API_BASE_URL}/products/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(productData),
+  });
+  return handleResponse(response);
+}
+
+export async function deleteProduct(id) {
+  const response = await fetch(`${API_BASE_URL}/products/${id}`, {
+    method: 'DELETE',
+  });
+  if (response.status === 204) return true;
+  return handleResponse(response);
+}
+

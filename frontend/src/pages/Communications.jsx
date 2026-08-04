@@ -7,7 +7,6 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Grid,
   TextField,
   Table,
   TableBody,
@@ -25,6 +24,7 @@ import {
   IconButton,
   Tooltip
 } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
