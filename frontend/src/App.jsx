@@ -8,6 +8,8 @@ import ContactDetails from "./pages/ContactDetails";
 import Products from "./pages/Products";
 import FollowUps from "./pages/FollowUps";
 import FollowUpDetails from "./pages/FollowUpDetails";
+import Communications from "./pages/Communications";
+import CommunicationDetails from "./pages/CommunicationDetails";
 
 function App() {
   return (
@@ -28,8 +30,10 @@ function App() {
       <Route path="/products" element={<Products />} />
       <Route path="/followups" element={<FollowUps />} />
       <Route path="/followups/:id" element={<FollowUpDetails />} />
-    </Routes>
-  );
-}
+      <Route path="/communications" element={<Communications />} />
+      <Route path="/communications/:id" element={<CommunicationDetails />} />
+      </Routes>
+      );
+      }
 
-export default App;
+      export default App;

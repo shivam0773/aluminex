@@ -153,3 +153,53 @@ export async function deleteFollowUp(id) {
   if (response.status === 204) return true;
   return handleResponse(response);
 }
+
+// --- Communication History API ---
+
+export async function fetchCommunications(params) {
+  const queryParams = new URLSearchParams();
+  queryParams.append('page', params.page.toString());
+  queryParams.append('size', params.size.toString());
+
+  if (params.search) queryParams.append('search', params.search);
+  if (params.company_id) queryParams.append('company_id', params.company_id.toString());
+  if (params.channel) queryParams.append('channel', params.channel);
+  if (params.contact_person_id) queryParams.append('contact_person_id', params.contact_person_id.toString());
+  if (params.date_after) queryParams.append('date_after', params.date_after);
+  if (params.date_before) queryParams.append('date_before', params.date_before);
+
+  const response = await fetch(`${API_BASE_URL}/communications/?${queryParams.toString()}`);
+  return handleResponse(response);
+}
+
+export async function fetchCommunication(id) {
+  const response = await fetch(`${API_BASE_URL}/communications/${id}`);
+  return handleResponse(response);
+}
+
+export async function createCommunication(commData) {
+  const response = await fetch(`${API_BASE_URL}/communications/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(commData),
+  });
+  return handleResponse(response);
+}
+
+export async function updateCommunication(id, commData) {
+  const response = await fetch(`${API_BASE_URL}/communications/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(commData),
+  });
+  return handleResponse(response);
+}
+
+export async function deleteCommunication(id) {
+  const response = await fetch(`${API_BASE_URL}/communications/${id}`, {
+    method: 'DELETE',
+  });
+  if (response.status === 204) return true;
+  return handleResponse(response);
+}
+

@@ -128,6 +128,19 @@ class CommunicationHistory(CommunicationHistoryBase, TimestampSchema):
     id: int
     company_id: int
 
+class CommunicationHistoryUpdate(BaseModel):
+    company_id: Optional[int] = None
+    contact_person_id: Optional[int] = None
+    channel: Optional[CommunicationChannel] = None
+    summary: Optional[str] = None
+    date: Optional[datetime] = None
+
+class CommunicationHistoryList(BaseModel):
+    items: List[CommunicationHistory]
+    total: int
+    page: int
+    size: int
+
 # --- Company ---
 class CompanyBase(BaseModel):
     name: str
