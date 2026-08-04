@@ -106,3 +106,50 @@ export async function deleteContact(id) {
   if (response.status === 204) return true;
   return handleResponse(response);
 }
+
+// --- Follow-ups API ---
+
+export async function fetchFollowUps(params) {
+  const queryParams = new URLSearchParams();
+  queryParams.append('page', params.page.toString());
+  queryParams.append('size', params.size.toString());
+  
+  if (params.company_id) queryParams.append('company_id', params.company_id.toString());
+  if (params.status) queryParams.append('status', params.status);
+  if (params.scheduled_after) queryParams.append('scheduled_after', params.scheduled_after);
+  if (params.scheduled_before) queryParams.append('scheduled_before', params.scheduled_before);
+
+  const response = await fetch(`${API_BASE_URL}/follow-ups/?${queryParams.toString()}`);
+  return handleResponse(response);
+}
+
+export async function fetchFollowUp(id) {
+  const response = await fetch(`${API_BASE_URL}/follow-ups/${id}`);
+  return handleResponse(response);
+}
+
+export async function createFollowUp(followData) {
+  const response = await fetch(`${API_BASE_URL}/follow-ups/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(followData),
+  });
+  return handleResponse(response);
+}
+
+export async function updateFollowUp(id, followData) {
+  const response = await fetch(`${API_BASE_URL}/follow-ups/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(followData),
+  });
+  return handleResponse(response);
+}
+
+export async function deleteFollowUp(id) {
+  const response = await fetch(`${API_BASE_URL}/follow-ups/${id}`, {
+    method: 'DELETE',
+  });
+  if (response.status === 204) return true;
+  return handleResponse(response);
+}

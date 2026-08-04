@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import companies, contacts
+from app.api import companies, contacts, follow_ups
 from app.core.database import engine
 from app.models.base import Base
 from app.models import buyer
@@ -23,6 +23,7 @@ app.add_middleware(
 # Include Routers
 app.include_router(companies.router, prefix="/api/v1")
 app.include_router(contacts.router, prefix="/api/v1")
+app.include_router(follow_ups.router, prefix="/api/v1")
 
 @app.get("/")
 async def root():

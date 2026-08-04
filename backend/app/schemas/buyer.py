@@ -107,6 +107,12 @@ class FollowUp(FollowUpBase, TimestampSchema):
     id: int
     company_id: int
 
+class FollowUpList(BaseModel):
+    items: List[FollowUp]
+    total: int
+    page: int
+    size: int
+
 # --- Communication History ---
 class CommunicationHistoryBase(BaseModel):
     channel: CommunicationChannel

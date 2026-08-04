@@ -7,6 +7,7 @@ import Contacts from "./pages/Contacts";
 import ContactDetails from "./pages/ContactDetails";
 import Products from "./pages/Products";
 import FollowUps from "./pages/FollowUps";
+import FollowUpDetails from "./pages/FollowUpDetails";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       
       <Route path="/products" element={<Products />} />
       <Route path="/followups" element={<FollowUps />} />
+      <Route path="/followups/:id" element={<FollowUpDetails />} />
     </Routes>
   );
 }
