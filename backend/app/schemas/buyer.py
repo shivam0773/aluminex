@@ -99,6 +99,7 @@ class FollowUpCreate(FollowUpBase):
     company_id: int
 
 class FollowUpUpdate(BaseModel):
+    company_id: Optional[int] = None
     scheduled_date: Optional[datetime] = None
     task_description: Optional[str] = None
     status: Optional[FollowUpStatus] = None

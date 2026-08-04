@@ -74,7 +74,7 @@ export default function FollowUps() {
 
   const loadInitialData = async () => {
     try {
-      const compData = await fetchCompanies({ page: 1, size: 1000 });
+      const compData = await fetchCompanies({ page: 1, size: 100 });
       setCompanies(compData.items);
     } catch (err) {
       console.error("Failed to load initial data", err);
@@ -161,7 +161,7 @@ export default function FollowUps() {
               onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             />
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={4}>
             <FormControl fullWidth size="small">
               <InputLabel>Company</InputLabel>
               <Select

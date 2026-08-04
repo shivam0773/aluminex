@@ -28,8 +28,10 @@ export default function AddFollowUpDialog({ open, onClose, onSuccess, onError })
   useEffect(() => {
     const loadCompanies = async () => {
       try {
-        const data = await fetchCompanies({ page: 1, size: 1000 });
+        const data = await fetchCompanies({ page: 1, size: 100 });
         setCompanies(data.items);
+        console.log("Companies API Response:", data);
+        console.log("Companies:", data.items);
       } catch (err) {
         console.error("Failed to load companies", err);
       }

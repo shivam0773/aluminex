@@ -18,6 +18,7 @@ const INITIAL_STATE = {
 };
 
 export default function FollowUpForm({ initialData, onChange, errors, companies }) {
+  // Use initialData or INITIAL_STATE directly in useState to keep state synced
   const [formData, setFormData] = useState(initialData || INITIAL_STATE);
   const statuses = ['Pending', 'Completed', 'Cancelled'];
 
@@ -31,6 +32,7 @@ export default function FollowUpForm({ initialData, onChange, errors, companies 
     const { name, value } = e.target;
     const updatedData = { ...formData, [name]: value };
     setFormData(updatedData);
+    // Pass latest state to parent
     onChange(updatedData);
   };
 
