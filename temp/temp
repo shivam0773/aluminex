@@ -1,0 +1,43 @@
+from pathlib import Path
+
+root = Path("frontend/src")
+
+folders = [
+    "assets",
+    "components",
+    "components/dashboard",
+    "components/company",
+    "components/common",
+    "components/layout",
+    "contexts",
+    "hooks",
+    "layouts",
+    "pages",
+    "services",
+    "theme",
+    "utils",
+]
+
+files = [
+    "pages/Dashboard.jsx",
+    "pages/Companies.jsx",
+    "pages/CompanyDetails.jsx",
+    "pages/Contacts.jsx",
+    "pages/Products.jsx",
+    "pages/FollowUps.jsx",
+    "pages/Settings.jsx",
+    "components/layout/Sidebar.jsx",
+    "components/layout/Topbar.jsx",
+    "components/layout/MainLayout.jsx",
+    "services/api.js",
+    "services/companyService.js",
+]
+
+for folder in folders:
+    (root / folder).mkdir(parents=True, exist_ok=True)
+
+for file in files:
+    path = root / file
+    path.touch(exist_ok=True)
+
+print("✅ ALUMINEX frontend structure created successfully!")
