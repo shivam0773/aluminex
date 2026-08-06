@@ -59,13 +59,13 @@ export default function CompanyDetails() {
 
       <TabPanel value={tabValue} index={0}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+          <Grid  size={{xs: 12, md: 6}}>
             <Typography variant="subtitle1"><strong>Industry:</strong> {company.industry}</Typography>
             <Typography variant="subtitle1"><strong>Type:</strong> {company.company_type}</Typography>
             <Typography variant="subtitle1"><strong>Website:</strong> {company.website}</Typography>
             <Typography variant="subtitle1"><strong>Annual Capacity:</strong> {company.annual_capacity} tons</Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid  size={{xs: 12, md: 6}}>
             <Typography variant="subtitle1"><strong>Email:</strong> {company.email}</Typography>
             <Typography variant="subtitle1"><strong>Phone:</strong> {company.phone}</Typography>
             <Typography variant="subtitle1"><strong>GST:</strong> {company.gst}</Typography>

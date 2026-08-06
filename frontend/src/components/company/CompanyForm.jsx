@@ -54,7 +54,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
   return (
     <Box sx={{ mt: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             required
             fullWidth
@@ -67,7 +67,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Industry"
@@ -77,7 +77,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Company Type"
@@ -87,7 +87,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Website"
@@ -98,7 +98,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="GST"
@@ -110,7 +110,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Phone"
@@ -122,7 +122,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Email"
@@ -135,7 +135,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="LinkedIn"
@@ -145,7 +145,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Annual Capacity (Tons)"
@@ -159,7 +159,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             inputProps={{ min: 0 }}
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <FormControl fullWidth margin="dense">
             <InputLabel>Status</InputLabel>
             <Select
@@ -174,7 +174,7 @@ export default function CompanyForm({ initialData, onChange, errors }) {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <TextField
             fullWidth
             label="Lead Source"

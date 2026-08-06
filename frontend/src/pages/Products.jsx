@@ -128,7 +128,7 @@ export default function Products() {
 
       <Paper sx={{ p: 2, mb: 3 }}>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={4}>
+          <Grid  size={{xs: 12, md: 4}}>
             <TextField
               fullWidth
               label="Search Code/Name"
@@ -138,7 +138,7 @@ export default function Products() {
               onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid  size={{xs: 12, md: 4}}>
             <FormControl fullWidth size="small">
               <InputLabel>Category</InputLabel>
               <Select
@@ -151,7 +151,7 @@ export default function Products() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid  size={{xs: 12, md: 4}}>
             <FormControlLabel
                 control={
                     <Switch

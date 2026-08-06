@@ -38,7 +38,7 @@ export default function CommunicationForm({ initialData, onChange, errors, compa
   return (
     <Box sx={{ mt: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <FormControl fullWidth margin="dense" error={!!errors.company_id}>
             <InputLabel id="company-label">Company *</InputLabel>
             <Select
@@ -58,7 +58,7 @@ export default function CommunicationForm({ initialData, onChange, errors, compa
             )}
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <FormControl fullWidth margin="dense">
             <InputLabel id="contact-label">Contact Person</InputLabel>
             <Select
@@ -77,7 +77,7 @@ export default function CommunicationForm({ initialData, onChange, errors, compa
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid  size={{xs: 12, sm: 6}}>
           <FormControl fullWidth margin="dense">
             <InputLabel>Channel</InputLabel>
             <Select
@@ -92,7 +92,7 @@ export default function CommunicationForm({ initialData, onChange, errors, compa
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid  size={{xs: 12, sm: 6}}>
           <TextField
             required
             fullWidth
@@ -107,7 +107,7 @@ export default function CommunicationForm({ initialData, onChange, errors, compa
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <TextField
             required
             fullWidth

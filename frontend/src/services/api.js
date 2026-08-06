@@ -249,3 +249,52 @@ export async function deleteProduct(id) {
   return handleResponse(response);
 }
 
+// --- Quotations API ---
+
+export async function fetchQuotations(params) {
+  const queryParams = new URLSearchParams();
+  queryParams.append('page', params.page.toString());
+  queryParams.append('size', params.size.toString());
+
+  if (params.search) queryParams.append('search', params.search);
+  if (params.company_id) queryParams.append('company_id', params.company_id.toString());
+  if (params.status) queryParams.append('status', params.status);
+  if (params.currency) queryParams.append('currency', params.currency);
+  if (params.date_from) queryParams.append('date_from', params.date_from);
+  if (params.date_to) queryParams.append('date_to', params.date_to);
+
+  const response = await fetch(`${API_BASE_URL}/quotations/?${queryParams.toString()}`);
+  return handleResponse(response);
+}
+
+export async function fetchQuotation(id) {
+  const response = await fetch(`${API_BASE_URL}/quotations/${id}`);
+  return handleResponse(response);
+}
+
+export async function createQuotation(data) {
+  const response = await fetch(`${API_BASE_URL}/quotations/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return handleResponse(response);
+}
+
+export async function updateQuotation(id, data) {
+  const response = await fetch(`${API_BASE_URL}/quotations/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return handleResponse(response);
+}
+
+export async function deleteQuotation(id) {
+  const response = await fetch(`${API_BASE_URL}/quotations/${id}`, {
+    method: 'DELETE',
+  });
+  if (response.status === 204) return true;
+  return handleResponse(response);
+}
+

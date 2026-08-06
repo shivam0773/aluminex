@@ -151,7 +151,7 @@ export default function FollowUps() {
 
       <Paper sx={{ p: 2, mb: 3 }}>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={3}>
+          <Grid  size={{xs: 12, md: 3}}>
             <TextField
               fullWidth
               label="Search Description"
@@ -161,7 +161,7 @@ export default function FollowUps() {
               onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid  size={{xs: 12, md: 4}}>
             <FormControl fullWidth size="small">
               <InputLabel>Company</InputLabel>
               <Select
@@ -174,7 +174,7 @@ export default function FollowUps() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} md={2}>
+          <Grid  size={{xs: 12, md: 2}}>
             <FormControl fullWidth size="small">
               <InputLabel>Status</InputLabel>
               <Select
@@ -187,7 +187,7 @@ export default function FollowUps() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} md={2}>
+          <Grid  size={{xs: 12, md: 2}}>
             <TextField
               fullWidth
               label="From"
@@ -198,7 +198,7 @@ export default function FollowUps() {
               InputLabelProps={{ shrink: true }}
             />
           </Grid>
-          <Grid item xs={12} md={2}>
+          <Grid  size={{xs: 12, md: 2}}>
             <TextField
               fullWidth
               label="To"

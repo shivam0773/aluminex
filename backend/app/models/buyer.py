@@ -59,6 +59,7 @@ class Company(Base, TimestampMixin):
     notes: Mapped[List["Note"]] = relationship(back_populates="company", cascade="all, delete-orphan")
     follow_ups: Mapped[List["FollowUp"]] = relationship(back_populates="company", cascade="all, delete-orphan")
     communication_history: Mapped[List["CommunicationHistory"]] = relationship(back_populates="company", cascade="all, delete-orphan")
+    quotations: Mapped[List["Quotation"]] = relationship(back_populates="company", cascade="all, delete-orphan")
 
 class Address(Base):
     __tablename__ = "addresses"

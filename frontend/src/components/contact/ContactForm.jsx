@@ -39,7 +39,7 @@ export default function ContactForm({ initialData, onChange, errors, companies }
   return (
     <Box sx={{ mt: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <FormControl fullWidth margin="dense" error={!!errors.company_id}>
             <InputLabel id="company-label">Company *</InputLabel>
             <Select
@@ -59,7 +59,7 @@ export default function ContactForm({ initialData, onChange, errors, companies }
             )}
           </FormControl>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             required
             fullWidth
@@ -72,7 +72,7 @@ export default function ContactForm({ initialData, onChange, errors, companies }
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Designation"
@@ -82,7 +82,7 @@ export default function ContactForm({ initialData, onChange, errors, companies }
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Email"
@@ -95,7 +95,7 @@ export default function ContactForm({ initialData, onChange, errors, companies }
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="Phone"
@@ -107,7 +107,7 @@ export default function ContactForm({ initialData, onChange, errors, companies }
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid  size={{xs: 12, md: 6}}>
           <TextField
             fullWidth
             label="WhatsApp"
@@ -119,7 +119,7 @@ export default function ContactForm({ initialData, onChange, errors, companies }
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <TextField
             fullWidth
             label="LinkedIn URL"

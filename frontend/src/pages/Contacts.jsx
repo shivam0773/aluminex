@@ -97,10 +97,10 @@ export default function Contacts() {
 
       <Paper sx={{ p: 2, mb: 3 }}>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid  size={{xs: 12, md: 6}}>
             <TextField fullWidth size="small" label="Search name or email..." value={search} onChange={(e) => {setSearch(e.target.value); setPage(1);}} />
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid  size={{xs: 12, md: 6}}>
             <FormControl fullWidth size="small">
               <InputLabel>Filter by Company</InputLabel>
               <Select value={companyId} label="Filter by Company" onChange={(e) => {setCompanyId(e.target.value); setPage(1);}}>

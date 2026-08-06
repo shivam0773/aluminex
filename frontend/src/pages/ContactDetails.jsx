@@ -42,12 +42,12 @@ export default function ContactDetails() {
         <Typography variant="h6" color="primary" gutterBottom>{company?.name || 'No Company'}</Typography>
         <Divider sx={{ my: 2 }} />
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
+          <Grid  size={{xs: 12, md: 6}}>
             <Typography><strong>Designation:</strong> {contact.designation || '-'}</Typography>
             <Typography><strong>Email:</strong> {contact.email || '-'}</Typography>
             <Typography><strong>Phone:</strong> {contact.phone || '-'}</Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid  size={{xs: 12, md: 6}}>
             <Typography><strong>WhatsApp:</strong> {contact.whatsapp || '-'}</Typography>
             <Typography><strong>LinkedIn:</strong> {contact.linkedin || '-'}</Typography>
           </Grid>

@@ -145,7 +145,7 @@ export default function Communications() {
 
       <Paper sx={{ p: 2, mb: 3 }}>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={4}>
+          <Grid  size={{xs: 12, md: 4}}>
             <TextField
               fullWidth
               label="Search Summary"
@@ -155,7 +155,7 @@ export default function Communications() {
               onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid  size={{xs: 12, md: 4}}>
             <FormControl fullWidth size="small">
               <InputLabel>Company</InputLabel>
               <Select
@@ -168,7 +168,7 @@ export default function Communications() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid  size={{xs: 12, md: 4}}>
             <FormControl fullWidth size="small">
               <InputLabel>Channel</InputLabel>
               <Select

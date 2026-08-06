@@ -140,7 +140,7 @@ export default function Companies() {
 
       <Paper sx={{ p: 2, mb: 3 }}>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid  size={{xs: 12, md: 6}}>
             <TextField
               fullWidth
               label="Search name, city, state..."
@@ -150,7 +150,7 @@ export default function Companies() {
               onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid  size={{xs: 12, sm: 6, md: 3}}>
             <FormControl fullWidth size="small">
               <InputLabel>Status</InputLabel>
               <Select
@@ -165,7 +165,7 @@ export default function Companies() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid  size={{xs: 12, sm: 6, md: 3}}>
             <FormControl fullWidth size="small">
               <InputLabel>Product Interest</InputLabel>
               <Select

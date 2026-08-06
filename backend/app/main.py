@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import companies, contacts, follow_ups, communications, products
+from app.api import companies, contacts, follow_ups, communications, products, quotations
 from app.core.database import engine
 from app.models.base import Base
-from app.models import buyer, product
+from app.models import buyer, product, quotation
 Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="ALUMINEX API",
@@ -26,6 +26,7 @@ app.include_router(contacts.router, prefix="/api/v1")
 app.include_router(follow_ups.router, prefix="/api/v1")
 app.include_router(communications.router, prefix="/api/v1")
 app.include_router(products.router, prefix="/api/v1")
+app.include_router(quotations.router, prefix="/api/v1")
 
 @app.get("/")
 async def root():

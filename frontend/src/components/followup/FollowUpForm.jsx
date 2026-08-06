@@ -39,7 +39,7 @@ export default function FollowUpForm({ initialData, onChange, errors, companies 
   return (
     <Box sx={{ mt: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <FormControl fullWidth margin="dense" error={!!errors.company_id}>
             <InputLabel id="company-label">Company *</InputLabel>
             <Select
@@ -59,7 +59,7 @@ export default function FollowUpForm({ initialData, onChange, errors, companies 
             )}
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <TextField
             required
             fullWidth
@@ -74,7 +74,7 @@ export default function FollowUpForm({ initialData, onChange, errors, companies 
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <TextField
             required
             fullWidth
@@ -89,7 +89,7 @@ export default function FollowUpForm({ initialData, onChange, errors, companies 
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <FormControl fullWidth margin="dense">
             <InputLabel>Status</InputLabel>
             <Select

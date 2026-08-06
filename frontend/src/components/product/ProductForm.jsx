@@ -42,7 +42,7 @@ export default function ProductForm({ initialData, onChange, errors }) {
   return (
     <Box sx={{ mt: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
+        <Grid  size={{xs: 12, sm: 6}}>
           <TextField
             required
             fullWidth
@@ -55,7 +55,7 @@ export default function ProductForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid  size={{xs: 12, sm: 6}}>
           <TextField
             required
             fullWidth
@@ -68,7 +68,7 @@ export default function ProductForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid  size={{xs: 12, sm: 6}}>
           <FormControl fullWidth margin="dense">
             <InputLabel>Category</InputLabel>
             <Select
@@ -83,7 +83,7 @@ export default function ProductForm({ initialData, onChange, errors }) {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid  size={{xs: 12, sm: 6}}>
           <TextField
             required
             fullWidth
@@ -97,7 +97,7 @@ export default function ProductForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <TextField
             fullWidth
             label="Description"
@@ -109,7 +109,7 @@ export default function ProductForm({ initialData, onChange, errors }) {
             margin="dense"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{xs: 12}}>
           <FormControlLabel
             control={
               <Switch

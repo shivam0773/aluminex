@@ -7,6 +7,10 @@ import Contacts from "./pages/Contacts";
 import ContactDetails from "./pages/ContactDetails";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
+import Quotations from "./pages/Quotations";
+import QuotationDetails from "./pages/QuotationDetails";
+import CreateQuotation from "./pages/CreateQuotation";
+import EditQuotation from "./pages/EditQuotation";
 import FollowUps from "./pages/FollowUps";
 import FollowUpDetails from "./pages/FollowUpDetails";
 import Communications from "./pages/Communications";
@@ -30,6 +34,12 @@ function App() {
 
       <Route path="/products" element={<Products />} />
       <Route path="/products/:id" element={<ProductDetails />} />
+
+      <Route path="/quotations" element={<Quotations />} />
+      <Route path="/quotations/new" element={<CreateQuotation />} />
+      <Route path="/quotations/:id" element={<QuotationDetails />} />
+      <Route path="/quotations/:id/edit" element={<EditQuotation />} />
+
       <Route path="/followups" element={<FollowUps />} />
       <Route path="/followups/:id" element={<FollowUpDetails />} />
       <Route path="/communications" element={<Communications />} />
@@ -37,4 +47,5 @@ function App() {
     </Routes>
   );
 }
+
       export default App;
