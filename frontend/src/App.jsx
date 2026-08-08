@@ -15,6 +15,10 @@ import FollowUps from "./pages/FollowUps";
 import FollowUpDetails from "./pages/FollowUpDetails";
 import Communications from "./pages/Communications";
 import CommunicationDetails from "./pages/CommunicationDetails";
+import SalesOrders from "./pages/SalesOrders";
+import SalesOrderDetails from "./pages/SalesOrderDetails";
+import CreateSalesOrder from "./pages/CreateSalesOrder";
+import EditSalesOrder from "./pages/EditSalesOrder";
 
 function App() {
   return (
@@ -39,6 +43,11 @@ function App() {
       <Route path="/quotations/new" element={<CreateQuotation />} />
       <Route path="/quotations/:id" element={<QuotationDetails />} />
       <Route path="/quotations/:id/edit" element={<EditQuotation />} />
+
+      <Route path="/sales-orders" element={<SalesOrders />} />
+      <Route path="/sales-orders/new" element={<CreateSalesOrder />} />
+      <Route path="/sales-orders/:id" element={<SalesOrderDetails />} />
+      <Route path="/sales-orders/:id/edit" element={<EditSalesOrder />} />
 
       <Route path="/followups" element={<FollowUps />} />
       <Route path="/followups/:id" element={<FollowUpDetails />} />

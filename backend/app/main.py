@@ -1,9 +1,31 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import companies, contacts, follow_ups, communications, products, quotations
+from app.api import (
+    companies as companies_api,
+    contacts as contacts_api,
+    follow_ups as follow_ups_api,
+    communications as communications_api,
+    products as products_api,
+    quotations as quotations_api,
+    sales_orders as sales_orders_api,
+    inventory as inventory_api,
+    shipments as shipments_api,
+    invoices as invoices_api,
+    payments as payments_api
+)
 from app.core.database import engine
 from app.models.base import Base
-from app.models import buyer, product, quotation
+from app.models import (
+    buyer as buyer_model,
+    product as product_model,
+    quotation as quotation_model,
+    sales_order as sales_order_model,
+    inventory as inventory_model,
+    shipment as shipment_model,
+    invoice as invoice_model,
+    payment as payment_model
+)
+
 Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="ALUMINEX API",
@@ -21,12 +43,17 @@ app.add_middleware(
 )
 
 # Include Routers
-app.include_router(companies.router, prefix="/api/v1")
-app.include_router(contacts.router, prefix="/api/v1")
-app.include_router(follow_ups.router, prefix="/api/v1")
-app.include_router(communications.router, prefix="/api/v1")
-app.include_router(products.router, prefix="/api/v1")
-app.include_router(quotations.router, prefix="/api/v1")
+app.include_router(companies_api.router, prefix="/api/v1")
+app.include_router(contacts_api.router, prefix="/api/v1")
+app.include_router(follow_ups_api.router, prefix="/api/v1")
+app.include_router(communications_api.router, prefix="/api/v1")
+app.include_router(products_api.router, prefix="/api/v1")
+app.include_router(quotations_api.router, prefix="/api/v1")
+app.include_router(sales_orders_api.router, prefix="/api/v1")
+app.include_router(inventory_api.router, prefix="/api/v1")
+app.include_router(shipments_api.router, prefix="/api/v1")
+app.include_router(invoices_api.router, prefix="/api/v1")
+app.include_router(payments_api.router, prefix="/api/v1")
 
 @app.get("/")
 async def root():

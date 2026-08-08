@@ -12,6 +12,11 @@ from app.models.buyer import (
     CommunicationChannel,
     FollowUpStatus
 )
+from app.models.sales_order import SalesOrder, SalesOrderItem
+from app.models.inventory import InventoryBalance, InventoryTransaction
+from app.models.shipment import Shipment, ShipmentStatus
+from app.models.invoice import Invoice, InvoiceItem, InvoiceStatus
+from app.models.payment import Payment, PaymentMethod
 
 __all__ = [
     "Base",
@@ -25,5 +30,16 @@ __all__ = [
     "CompanyStatus",
     "ProductType",
     "CommunicationChannel",
-    "FollowUpStatus"
+    "FollowUpStatus",
+    "SalesOrder",
+    "SalesOrderItem",
+    "InventoryBalance",
+    "InventoryTransaction",
+    "Shipment",
+    "ShipmentStatus",
+    "Invoice",
+    "InvoiceItem",
+    "InvoiceStatus",
+    "Payment",
+    "PaymentMethod"
 ]

@@ -298,3 +298,49 @@ export async function deleteQuotation(id) {
   return handleResponse(response);
 }
 
+// --- Sales Orders API ---
+
+export async function fetchSalesOrders(params) {
+  const queryParams = new URLSearchParams();
+  queryParams.append('page', params.page.toString());
+  queryParams.append('size', params.size.toString());
+
+  if (params.search) queryParams.append('search', params.search);
+  if (params.company_id) queryParams.append('company_id', params.company_id.toString());
+  if (params.status) queryParams.append('status', params.status);
+
+  const response = await fetch(`${API_BASE_URL}/sales-orders/?${queryParams.toString()}`);
+  return handleResponse(response);
+}
+
+export async function fetchSalesOrder(id) {
+  const response = await fetch(`${API_BASE_URL}/sales-orders/${id}`);
+  return handleResponse(response);
+}
+
+export async function createSalesOrder(data) {
+  const response = await fetch(`${API_BASE_URL}/sales-orders/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return handleResponse(response);
+}
+
+export async function updateSalesOrder(id, data) {
+  const response = await fetch(`${API_BASE_URL}/sales-orders/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return handleResponse(response);
+}
+
+export async function deleteSalesOrder(id) {
+  const response = await fetch(`${API_BASE_URL}/sales-orders/${id}`, {
+    method: 'DELETE',
+  });
+  if (response.status === 204) return true;
+  return handleResponse(response);
+}
+
